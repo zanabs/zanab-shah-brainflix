@@ -1,3 +1,2 @@
 # zanab-shah-brainflix
-this is my new repository
-git
+this is my repository for brainflix

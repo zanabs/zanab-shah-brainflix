@@ -1,0 +1,58 @@
+@use './styles/partials/__variables' as *;
+@use './styles/mixins/global.scss' as *;
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+hr {
+  border-top: 1px solid $secondarySilver;
+}
+
+p {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+
+  @include for-tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: bold;
+
+  @include for-tablet {
+    font-size: 33px;
+    line-height: 44px;
+  }
+}
+
+h2 {
+  color: $primaryBlack;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+h3 {
+  color: $primarySilver;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @include for-tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

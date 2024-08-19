@@ -30,13 +30,4 @@
       outline: 4px auto -webkit-focus-ring-color;
     }
 
-    &__suffix-icon,
-    &__prefix-icon {
-        width: 32px;
-        display: flex;
-        svg {
-            color: inherit;
-        }
-    }
-
 }

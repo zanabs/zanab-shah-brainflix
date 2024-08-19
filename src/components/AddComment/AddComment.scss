@@ -1,0 +1,46 @@
+@use '../../styles/partials/__variables' as *;
+@use '../../styles/mixins/global.scss' as *;
+
+.add-comment {
+    display: flex;
+    gap: $componentSpacing;
+    margin-bottom: $componentSpacing;
+    text-align: left;
+
+    @include for-desktop {
+        padding: $componentSpacing;
+    }
+
+    &__conversation {
+        flex-grow: 1;
+    }
+
+    &__input {
+        @include input-field(true);
+
+        height: 120px;
+
+        @include for-tablet {
+            height: 40px;
+            padding: 1px;
+        }
+    }
+
+    .avatar {
+        margin-top: 44px;
+
+        @include for-tablet {
+            margin-top: 50px;
+        }
+    }
+
+    &__field {
+        display: flex;
+        gap: $componentSpacing;
+        flex-direction: column;
+
+        @include for-tablet {
+            flex-direction: row;
+        }
+    }
+}

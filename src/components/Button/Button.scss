@@ -1,22 +1,28 @@
-@use '../../styles/partials/_variables' as variables;
+@use '../../styles/partials/_variables' as *;
+@use '../../styles/mixins/global.scss' as *;
 
 .button {
-    border-radius: 8px;
+    border-radius: $roundedCornerRadius;
     border: 1px solid transparent;
     padding: 0 8px;
     height: 40px;
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: variables.$primaryBlue;
+    background-color: $primaryBlue;
+    color: $primaryWhite;
     cursor: pointer;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    @include for-tablet {
+        width: fit-content;
+    }
+
     &:hover {
-        background-color: variables.$secondaryBlue;
+        background-color: $secondaryBlue;
     }
 
     &:focus,
@@ -27,6 +33,7 @@
     &__suffix-icon,
     &__prefix-icon {
         width: 32px;
+        display: flex;
         svg {
             color: inherit;
         }

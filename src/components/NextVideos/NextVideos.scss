@@ -1,0 +1,7 @@
+@use '../../styles/mixins/global.scss' as *;
+
+.next-videos {
+    @include for-desktop {
+        min-width: 25%;
+    }
+}

@@ -1,0 +1,67 @@
+@use '../../styles/partials/_variables' as *;
+@use '../../styles/mixins/global.scss' as *;
+
+.video-player {
+
+    &__player {
+        max-height: 580px;
+        background: $secondaryBlack;
+
+        &[poster]{
+            width: 100%;
+        }
+    }
+
+
+    &__details {
+        display: flex;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__details-channel {
+        font-weight: bold;
+    }
+
+    &__details-info, &__details-stats {
+        width: 50%;
+
+        @include for-tablet {
+            display: flex;
+            gap: 2 * $componentSpacing;
+        }
+    }
+
+    &__details-info {
+        @include for-tablet {
+            justify-content: left;
+        }
+    }
+
+    &__details-stats {
+        @include for-tablet {
+            justify-content: right;
+        }
+    }
+
+    &__details-text {
+        margin: $componentSpacing 0;
+
+        &--icon {
+            display: flex;
+            gap: $componentSpacing;
+        }
+    }
+
+    &__comments-next-videos {
+        display: flex;
+        flex-direction: column;
+        gap: $componentSpacing;
+
+        @include for-desktop {
+            flex-direction: row;
+        }
+    }
+}

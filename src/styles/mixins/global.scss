@@ -1,0 +1,26 @@
+@use '../partials/_variables' as *;
+
+@mixin input-field($isTextArea: false) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondaryWhite;
+    border: 1px solid $secondarySilver;
+    padding: 16px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    
+    @if $isTextArea == false {
+        height: 40px;
+        padding: 1px;
+    }
+}
+
+@mixin for-tablet {
+    @media (min-width: 767px) { @content; }
+}
+
+  @mixin for-desktop {
+    @media (min-width: 1280px) { @content; }
+  }

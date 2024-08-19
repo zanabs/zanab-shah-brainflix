@@ -1,35 +1,83 @@
-@use '../../styles/partials/_variables' as variables;
+@use '../../styles/partials/_variables' as *;
+@use '../../styles/mixins/global.scss' as *;
 
 .navigation {
+    margin-bottom: $componentSpacing;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    @include for-tablet {
+        flex-direction: row;
+    }
+
+    &__search-bar-button {
+        display: flex;
+        flex-direction: column;
+
+        @include for-tablet {
+            flex-direction: row;
+            gap: $componentSpacing;
+        }
+        
+    }
+
+    &__avatar {
+
+        @include for-tablet {
+            display: none;
+        }
+
+        &--tablet {
+            display: none;
+
+            @include for-tablet {
+                display: initial;
+            }
+        }
+        
+    }
 
     &__logo {
-        margin-bottom: variables.$componentSpacing;
+        display: flex;
+        justify-content: center;
+        max-width: 120px;
+        margin: auto;
+        margin-bottom: $componentSpacing;
+
+        img {
+            width: 100%;
+        }
+
+        @include for-tablet {
+            margin: initial;
+        }
     }
 
     &__search-bar {
         display: flex;
         width: 100%;
-        gap: 16px;
-        margin-bottom: variables.$componentSpacing;
+        gap: $componentSpacing;
+        margin-bottom: $componentSpacing;
         align-items: center;
 
+        @include for-tablet {
+            width: auto;
+            margin: initial;
+
+        }
+
         &-field {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: variables.$secondaryWhite;
-            border: 1px solid variables.$secondarySilver;
-            padding: 1px;
-            width: 100%;
-            border-radius: 5px;
-            height: 40px;
+            @include input-field();
         }
 
         input {
             flex-grow: 1;
-            background-color: variables.$secondaryWhite;
+            background-color: $secondaryWhite;
             border: none;
             height: 100%;
+            width: 200px;
         }
 
         &-icon {

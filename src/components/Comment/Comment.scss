@@ -1,3 +1,34 @@
+@use '../../styles/partials/_variables' as *;
+@use '../../styles/mixins/global.scss' as *;
+
 .comment {
-    background-color: red;
+    text-align: left;
+    display: flex;
+
+    @include for-desktop {
+        padding: $componentSpacing;
+    }
+    
+    gap: $componentSpacing;
+
+    &__body {
+        flex-grow: 1;
+    }
+
+    &__name-date {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__name {
+        font-weight: bold;
+    }
+
+    &__date {
+        color: $primarySilver;
+    }
 }

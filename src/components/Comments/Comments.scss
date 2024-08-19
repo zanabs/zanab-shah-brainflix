@@ -1,0 +1,10 @@
+@use '../../styles/partials/_variables' as *;
+@use '../../styles/mixins/global.scss' as *;
+
+.comments {
+    margin-bottom: $componentSpacing;
+
+    @include for-desktop {
+        border-right: 1px solid $secondarySilver;
+    }
+}

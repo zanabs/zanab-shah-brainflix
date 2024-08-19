@@ -9,6 +9,7 @@
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
+  font-family: AvenirNext;
 }
 
 hr {
@@ -19,6 +20,7 @@ p {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
+  font-family: AvenirNext;
 
   @include for-tablet {
     font-size: 14px;
@@ -30,6 +32,7 @@ h1 {
   font-size: 24px;
   line-height: 32px;
   font-weight: bold;
+  font-family: AvenirNext;
 
   @include for-tablet {
     font-size: 33px;
@@ -42,6 +45,7 @@ h2 {
   font-size: 12px;
   line-height: 20px;
   font-weight: bold;
+  font-family: AvenirNext;
 }
 
 h3 {
@@ -50,6 +54,7 @@ h3 {
   line-height: 20px;
   font-weight: bold;
   text-transform: uppercase;
+  font-family: AvenirNext;
 
   @include for-tablet {
     font-size: 14px;

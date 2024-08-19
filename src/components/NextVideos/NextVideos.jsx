@@ -6,8 +6,8 @@ export const NextVideos = ({videos, currentVideo, onVideoChange}) => {
     return(
         <div className="next-videos">
             <h3>NEXT VIDEOS</h3>
-            {videos.map(video => {
-                return video.id !== currentVideo.id && <VideoCard video={video} onVideoClick={onVideoChange} />
+            {videos.map((video, index) => {
+                return video.id !== currentVideo.id && <VideoCard key={index} video={video} onVideoClick={onVideoChange} />
             })}
         </div>
     );

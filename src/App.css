@@ -1,0 +1,81 @@
+@font-face {
+  font-family: AvenirNext;
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
+  src: url(../../assets/fonts/AvenirNextLTPro.ttf) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: AvenirNext;
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+  src: url(../../assets/fonts/AvenirNextLTProDemi.ttf) format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: AvenirNext;
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
+  src: url(../../assets/fonts/AvenirNextLTProBold.ttf) format("truetype");
+  font-weight: 700;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: AvenirNext;
+}
+
+hr {
+  border-top: 1px solid #E1E1E1;
+}
+
+p {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  font-family: AvenirNext;
+}
+@media (min-width: 767px) {
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: bold;
+  font-family: AvenirNext;
+}
+@media (min-width: 767px) {
+  h1 {
+    font-size: 33px;
+    line-height: 44px;
+  }
+}
+
+h2 {
+  color: #323232;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+  font-family: AvenirNext;
+}
+
+h3 {
+  color: #AFAFAF;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: AvenirNext;
+}
+@media (min-width: 767px) {
+  h3 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}/*# sourceMappingURL=App.css.map */

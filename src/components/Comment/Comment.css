@@ -1,0 +1,39 @@
+@font-face {
+  font-family: AvenirNext;
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
+  src: url(../../assets/fonts/AvenirNextLTPro.ttf) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: AvenirNext;
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+  src: url(../../assets/fonts/AvenirNextLTProDemi.ttf) format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: AvenirNext;
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
+  src: url(../../assets/fonts/AvenirNextLTProBold.ttf) format("truetype");
+  font-weight: 700;
+}
+.comment {
+  text-align: left;
+  display: flex;
+  gap: 16px;
+}
+.comment__body {
+  flex-grow: 1;
+}
+.comment__name-date {
+  display: flex;
+  justify-content: space-between;
+}
+.comment__name-date p {
+  margin: 0;
+}
+.comment__name {
+  font-weight: bold;
+}
+.comment__date {
+  color: #AFAFAF;
+}/*# sourceMappingURL=Comment.css.map */

@@ -4,6 +4,7 @@ import { Navigation } from './components/Navigation/Navigation'
 import { VideoPlayer } from './components/VideoPlayer/VideoPlayer'
 import { Upload } from './components/Upload'
 import jsonData from '../src/data/video-details.json'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 
@@ -27,7 +28,13 @@ function App() {
     <>
       <Navigation />
       {currentVideo && <VideoPlayer videoData={currentVideo} onVideoChange={onVideoChange} videos={videos}/>}
-      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigation />}/>
+          {/* <Route path="home" element={<home />}/> */}
+          <Route path="upload" element={<Upload />}/>
+        </Routes>
+    </BrowserRouter>
 
     </>
   )

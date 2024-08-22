@@ -3,6 +3,7 @@ import './App.scss'
 import { Navigation } from './components/Navigation/Navigation'
 import { VideoPlayer } from './components/VideoPlayer/VideoPlayer'
 import jsonData from '../src/data/video-details.json'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 
@@ -25,7 +26,12 @@ function App() {
     <>
       <Navigation />
       {currentVideo && <VideoPlayer videoData={currentVideo} onVideoChange={onVideoChange} videos={videos}/>}
-      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigation />}>
+          </Route>
+        </Routes>
+    </BrowserRouter>
 
     </>
   )

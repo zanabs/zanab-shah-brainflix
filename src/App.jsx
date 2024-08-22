@@ -8,6 +8,9 @@ import { AddComment } from './components/AddComment/AddComment'
 import { VideoCard } from './components/VideoCard/VideoCard'
 import { VideoPlayer } from './components/VideoPlayer/VideoPlayer'
 import { NextVideos } from './components/NextVideos/NextVideos'
+import {videoDetails} from '../src/data/video-details.json'
+
+let API_KEY= "e62e8250-f997-4dec-970d-fd304d12c882"
 
 function App() {
 

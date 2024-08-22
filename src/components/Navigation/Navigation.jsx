@@ -1,9 +1,9 @@
-import { useState } from 'react';
+
 import { Avatar } from '../Avatar/Avatar';
 import { Button } from '../Button/Button';
 import './Navigation.scss'
 
-export const Navigation = (props) => {
+export const Navigation = () => {
     return (
         <section className='navigation'>
             <div className='navigation__logo'>

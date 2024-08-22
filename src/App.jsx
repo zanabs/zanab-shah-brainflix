@@ -28,8 +28,9 @@ function App() {
       {currentVideo && <VideoPlayer videoData={currentVideo} onVideoChange={onVideoChange} videos={videos}/>}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigation />}>
-          </Route>
+          <Route path="/" element={<Navigation />}/>
+          {/* <Route path="home" element={<home />}/>
+          <Route path="upload" element={<upload />}/> */}
         </Routes>
     </BrowserRouter>
 

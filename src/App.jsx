@@ -5,6 +5,7 @@ import { VideoPlayer } from './components/VideoPlayer/VideoPlayer'
 import jsonData from '../src/data/video-details.json'
 
 
+
 function App() {
 
   const [videos, setVideos] = useState(jsonData);
@@ -24,8 +25,11 @@ function App() {
     <>
       <Navigation />
       {currentVideo && <VideoPlayer videoData={currentVideo} onVideoChange={onVideoChange} videos={videos}/>}
+      
+
     </>
   )
+
 }
 
 export default App

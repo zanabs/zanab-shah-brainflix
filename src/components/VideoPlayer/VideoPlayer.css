@@ -1,0 +1,70 @@
+@font-face {
+  font-family: AvenirNext;
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
+  src: url(../../assets/fonts/AvenirNextLTPro.ttf) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: AvenirNext;
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+  src: url(../../assets/fonts/AvenirNextLTProDemi.ttf) format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: AvenirNext;
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
+  src: url(../../assets/fonts/AvenirNextLTProBold.ttf) format("truetype");
+  font-weight: 700;
+}
+.video-player__player {
+  max-height: 580px;
+  background: #000000;
+}
+.video-player__player[poster] {
+  width: 100%;
+}
+.video-player__details {
+  display: flex;
+}
+.video-player__details p {
+  margin: 0;
+}
+.video-player__details-channel {
+  font-weight: bold;
+}
+.video-player__details-info, .video-player__details-stats {
+  width: 50%;
+}
+@media (min-width: 767px) {
+  .video-player__details-info, .video-player__details-stats {
+    display: flex;
+    gap: 32px;
+  }
+}
+@media (min-width: 767px) {
+  .video-player__details-info {
+    justify-content: left;
+  }
+}
+@media (min-width: 767px) {
+  .video-player__details-stats {
+    justify-content: right;
+  }
+}
+.video-player__details-text {
+  margin: 16px 0;
+}
+.video-player__details-text--icon {
+  display: flex;
+  gap: 16px;
+}
+.video-player__comments-next-videos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 1280px) {
+  .video-player__comments-next-videos {
+    flex-direction: row;
+  }
+}/*# sourceMappingURL=VideoPlayer.css.map */

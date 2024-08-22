@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react'
 import './App.scss'
 import { Navigation } from './components/Navigation/Navigation'
 import { VideoPlayer } from './components/VideoPlayer/VideoPlayer'
+import { Upload } from './components/Upload'
 import jsonData from '../src/data/video-details.json'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 
 
 

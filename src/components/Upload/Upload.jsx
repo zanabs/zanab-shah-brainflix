@@ -21,6 +21,7 @@ export const Upload = () => {
                 <textarea placeholder='Add a description for your video' className='upload-video__description-input'>
                 </textarea>
                 <Button prefixSrc={'src/assets/images/icons/upload.svg'}>PUBLISH</Button>
+                <p className="upload-video__cancel">CANCEL</p>
 
             </div>
         </>

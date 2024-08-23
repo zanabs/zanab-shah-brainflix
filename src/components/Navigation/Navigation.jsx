@@ -1,4 +1,3 @@
-
 import { Avatar } from '../Avatar/Avatar';
 import { Button } from '../Button/Button';
 import './Navigation.scss'

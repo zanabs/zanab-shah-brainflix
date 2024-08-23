@@ -10,6 +10,7 @@
     border-radius: 5px;
     box-sizing: border-box;
     width: 100%;
+    font-family: inherit;
     
     @if $isTextArea == false {
         height: 40px;

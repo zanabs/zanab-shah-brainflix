@@ -1,0 +1,30 @@
+@use '../../styles/partials/_variables' as *;
+@use '../../styles/mixins/global.scss' as *;
+
+.upload-video {
+    border: 1px solid $secondarySilver;
+    &__title {
+        margin: 0%;
+        padding: 1.875rem 0rem;
+        font-size: 25px;
+    }
+    &__label {
+        font-size: 15px;
+        color: $primarySilver;
+        font-weight: 600;
+    }
+    &__title-input {
+        @include input-field(false);
+        padding: 1rem;
+    
+    }
+
+    &__description-input {
+        @include input-field(true);
+        margin-bottom: 2rem;
+    }
+    &__preview {
+        width: 100%;
+    }
+
+}

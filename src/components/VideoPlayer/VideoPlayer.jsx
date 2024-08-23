@@ -2,9 +2,22 @@ import { Comments } from '../Comments/Comments';
 import { Icon } from '../Icon/Icon';
 import { NextVideos } from '../NextVideos/NextVideos';
 import './VideoPlayer.scss';
+import jsonData from '../../data/video-details.json';
+import { useEffect, useState } from 'react';
 
-export const VideoPlayer = ({videoData, videos, onVideoChange}) => {
-    const {title, channel, image, description, views, likes, video, timestamp, comments} = videoData;
+
+
+export const VideoPlayer = () => {
+
+    const [videos, setVideos] = useState(jsonData);
+    const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  
+  
+    const onVideoChange = (video) => {
+      setCurrentVideo(video);
+    }
+
+    const {title, channel, image, description, views, likes, video, timestamp, comments} = currentVideo;
 
     const getDate = () => {
         return new Date(timestamp).toDateString();
@@ -38,7 +51,7 @@ export const VideoPlayer = ({videoData, videos, onVideoChange}) => {
             <p>{description}</p>
             <div className='video-player__comments-next-videos'>
                 <Comments comments={comments} />
-                <NextVideos videos={videos} currentVideo={videoData} onVideoChange={onVideoChange}  />
+                <NextVideos videos={videos} currentVideo={currentVideo} onVideoChange={onVideoChange}  />
             </div>
         </div>
     )

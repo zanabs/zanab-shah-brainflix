@@ -3,7 +3,6 @@ import { Comment } from "../Comment/Comment"
 import './Comments.scss';
 
 export const Comments = ({videoId}) => {
-    console.lo);
     
     return (
         <div className="comments">

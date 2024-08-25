@@ -40,7 +40,7 @@ export const VideoPlayer = () => {
                     const response = await axios.get(`${API_URL}/videos/${videoId}${API_KEY}`);
                     setCurrentVideo(response.data);
                 } catch (error) {
-                    console.error(`Error fetching video with id:${videoId}`, error);
+                    console.error(`ERROR. Cannot retrieve video from this id:${videoId}`, error);
                 }
             } else if(videos.length) {
                 navigatePage('/video/'+videos[0].id);

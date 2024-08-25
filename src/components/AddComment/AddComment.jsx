@@ -10,7 +10,7 @@ export const AddComment = ({userImageSrc}) => {
                 <h3>JOIN THE CONVERSATION</h3>
                 <div className='add-comment__field'>
                     <textarea placeholder='Add a new comment' className='add-comment__input'></textarea>
-                    <Button prefixSrc={'src/assets/images/icons/add_comment.svg'}>COMMENT</Button>
+                    <Button prefixSrc={'/src/assets/images/icons/add_comment.svg'}>COMMENT</Button>
                 </div>
             </div>
         </div>

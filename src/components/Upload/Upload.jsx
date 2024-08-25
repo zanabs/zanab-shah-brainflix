@@ -28,7 +28,7 @@ export const Upload = () => {
                     <img className="upload-video__preview" src="src/assets/images/Upload-video-preview.jpg"></img>
                     
                     <div>
-                        <form onSubmit={whenSubmitted}>
+                        <form onSubmit={whenSubmitted} className="upload-video__form">
                             <p className="upload-video__label">TITLE YOUR VIDEO
                             </p>
                             <textarea placeholder='Add a title to your video' className='upload-video__title-input'>
@@ -37,7 +37,7 @@ export const Upload = () => {
                             </p>
                             <textarea placeholder='Add a description for your video' className='upload-video__description-input'>
                             </textarea>
-                            <Button type="submit" prefixSrc={'src/assets/images/icons/upload.svg'}>PUBLISH</Button>  
+                            <Button type="submit" prefixSrc={'/src/assets/images/icons/upload.svg'}>PUBLISH</Button>  
                             {publishButtonClicked && <h1>Thank you for your submission! Redirecting to homepage...</h1> }
                             <p className="upload-video__cancel">CANCEL</p>
                         </form>

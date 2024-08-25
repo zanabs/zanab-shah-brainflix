@@ -2,7 +2,7 @@
 @use '../../styles/mixins/global.scss' as *;
 
 .upload-video {
-    border: 1px solid $secondarySilver;
+
     &__title {
         margin: 0%;
         padding: 1.875rem 0rem;
@@ -21,10 +21,17 @@
         padding: 1rem;
     
     }
+    &__title-input::placeholder {
+        color:$primaryBlack;
+    }
 
     &__description-input {
         @include input-field(true);
         margin-bottom: 2rem;
+    }
+
+    &__description-input::placeholder {
+        color:$primaryBlack;
     }
     &__preview {
         width: 100%;

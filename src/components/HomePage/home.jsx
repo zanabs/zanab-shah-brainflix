@@ -5,6 +5,7 @@ import { VideoPlayer } from "../VideoPlayer/VideoPlayer";
 export const Home = () => {
     return (
     <>
+    <Navigation />
     <VideoPlayer />
     </>
     );

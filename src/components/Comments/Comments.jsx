@@ -4,7 +4,7 @@ import { Comment } from '../Comment/Comment';
 import './Comments.scss';
 
 
-export const Comments = ({videoId}) => {
+export const Comments = ({comments}) => {
     
     return (
         <div className="comments">

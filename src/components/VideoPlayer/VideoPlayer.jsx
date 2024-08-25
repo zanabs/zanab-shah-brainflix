@@ -2,17 +2,27 @@ import { Comments } from '../Comments/Comments';
 import { Icon } from '../Icon/Icon';
 import { NextVideos } from '../NextVideos/NextVideos';
 import './VideoPlayer.scss';
-import jsonData from '../../data/video-details.json';
 import { useEffect, useState } from 'react';
 
 
 
 export const VideoPlayer = () => {
 
-    const [videos, setVideos] = useState(jsonData);
-    const [currentVideo, setCurrentVideo] = useState(videos[0]);
-  
-  
+    const [videos, setVideos] = useState(null);
+    const [currentVideo, setCurrentVideo] = useState(null)
+   
+
+    useEffect(() => {
+     const fetchVideos = async () => {
+       const response = await axios.get(
+         'https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key='+API_KEY
+       );
+       setVideos(response.data);
+       setCurrentVideo(response.data[0]);
+     };
+     fetchVideos();
+    },[])
+
     const onVideoChange = (video) => {
       setCurrentVideo(video);
     }

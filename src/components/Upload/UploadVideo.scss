@@ -5,8 +5,8 @@
 
     &__title {
         margin: 0%;
-        padding: 1.875rem 0rem;
-        font-size: 25px;
+        padding: $componentSpacing 0rem;
+        font-size: 1.875rem;
     }
     &__label {
         font-size: 15px;
@@ -42,6 +42,7 @@
         width: 100%;
         color: $primaryBlue;
         font-weight: 700;
+        padding-top: $componentSpacing;
     }
 
 

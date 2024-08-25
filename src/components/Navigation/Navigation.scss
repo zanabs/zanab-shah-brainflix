@@ -1,7 +1,8 @@
-@use '../../styles/partials/_variables' as *;
+@use '../../styles/partials/__variables.scss' as *;
 @use '../../styles/mixins/global.scss' as *;
 
 .navigation {
+    padding: 1rem;
     margin-bottom: $componentSpacing;
 
     display: flex;
@@ -87,4 +88,6 @@
             }
         }
     }
+
+    
 }

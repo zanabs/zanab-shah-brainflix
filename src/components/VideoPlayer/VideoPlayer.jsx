@@ -24,14 +24,6 @@ export const VideoPlayer = () => {
      fetchVideos();
     },[])
 
-    // useEffect(() => {
-    //     console.log(videos)
-    //     setCurrentVideo(videos[0]);
-    //    },[videos])
-
-
-  
-  
     const onVideoChange = (video) => {
       setCurrentVideo(video);
     }

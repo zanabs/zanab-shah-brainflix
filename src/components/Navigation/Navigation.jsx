@@ -17,7 +17,6 @@ export const Navigation = () => {
             <div className='navigation__search-bar-button'>
                 <div className='navigation__search-bar'>
                     <div className='navigation__search-bar-field'>
-                        <img className='navigation__search-bar-icon' src={'/src/assets/images/icons/search.svg'} />
                         <input placeholder='Search' />
                     </div>                
                     <div className='navigation__avatar'>

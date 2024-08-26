@@ -1,4 +1,4 @@
-@use '../../styles/partials/_variables' as *;
+@use '../../styles/partials/__variables' as *;
 @use '../../styles/mixins/global.scss' as *;
 
 .video-card {
@@ -6,6 +6,7 @@
     gap: $componentSpacing;
     margin-bottom: $componentSpacing;
     max-width: 336px;
+    background-color: $secondarySilver;
 
     &__image {
         border-radius: $roundedCornerRadius;

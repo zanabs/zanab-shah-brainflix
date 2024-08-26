@@ -4,7 +4,7 @@ import './UploadVideo.scss'
 import { Button } from '../Button/Button';
 
 
-export const Upload = () => {
+export const UploadVideo = () => {
         const [publishButtonClicked, setPublishButtonClicked] = useState(false);
         const navigateHome = useNavigate(); 
 

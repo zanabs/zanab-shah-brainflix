@@ -6,13 +6,13 @@ import './Navigation.scss'
 export const Navigation = () => {
 
     
-        const navigateHome = useNavigate(); 
+    const navigate = useNavigate(); 
 
         
     return (
         <section className='navigation'>
             <div className='navigation__logo'>
-                <img onClick={() => navigateHome('/')} src='/src/assets/images/BrainFlix-logo.svg' alt='logo'/>
+                <img onClick={() => navigate('/')} src='/src/assets/images/BrainFlix-logo.svg' alt='logo'/>
             </div>
             <div className='navigation__search-bar-button'>
                 <div className='navigation__search-bar'>
@@ -24,7 +24,7 @@ export const Navigation = () => {
                         <Avatar userImageSrc={'/src/assets/images/Mohan-muruge.jpg'} />
                     </div>
                 </div>
-                <Button prefixSrc={'/src/assets/images/icons/upload.svg'}>Upload</Button>
+                <Button onClick={() => navigate('/upload')} prefixSrc={'/src/assets/images/icons/upload.svg'}>Upload</Button>
                 <div className='navigation__avatar navigation__avatar--tablet'>
                     <Avatar userImageSrc={'../../src/assets/images/Mohan-muruge.jpg'} />
                 </div>

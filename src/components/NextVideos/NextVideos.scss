@@ -1,7 +1,13 @@
 @use '../../styles/mixins/global.scss' as *;
+@use '../../styles/partials/_variables' as *;
 
 .next-videos {
+
     @include for-desktop {
         min-width: 25%;
+    }
+
+    img {
+        background-color: $primarySilver;
     }
 }

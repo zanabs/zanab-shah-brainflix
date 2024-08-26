@@ -33,4 +33,9 @@
     &__date {
         color: $primarySilver;
     }
+
+    &__delete {
+        display: flex;
+        justify-content: end;
+    }
 }

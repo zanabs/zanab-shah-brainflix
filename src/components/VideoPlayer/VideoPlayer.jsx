@@ -96,7 +96,7 @@ export const VideoPlayer = () => {
                     <p>{currentVideo.description}</p>
                     <div className='video-player__comments-next-videos'>
                         {currentVideo.comments && (
-                            <Comments comments={currentVideo.comments} videoId={currentVideo.id} newCommentAdded={() => getCurrentVideo()} />
+                            <Comments comments={currentVideo.comments} videoId={currentVideo.id} updateCommentsList={() => getCurrentVideo()} />
                         )}
                         <NextVideos videos={videos} currentVideo={currentVideo} onVideoChange={clickThumbnail} />
                     </div>

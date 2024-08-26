@@ -1,9 +1,24 @@
+import axios from "axios";
 import { Avatar } from "../Avatar/Avatar";
-import './Comment.scss';
 
-export const Comment = ({comment}) => {
+import './Comment.scss';
+import { API_KEY, API_URL } from "../../utils";
+import { Button } from "../Button/Button";
+
+export const Comment = ({comment, updateCommentsList, videoId}) => {
     const getDate = () => {
         return new Date(comment.timestamp).toDateString();
+    }
+
+    const whenDeleteButtonClicked = async () => {
+        try {
+            await axios.delete(`${API_URL}/videos/${videoId}/comments/${comment.id}${API_KEY}`);
+            updateCommentsList();
+            
+        } catch(error) {
+            console.log("comment doesn't exist", error)
+            
+        }
     }
 
     return (
@@ -15,6 +30,9 @@ export const Comment = ({comment}) => {
                     <p className="comment__date">{getDate()}</p>
                 </div>
                 <p>{comment.comment}</p>
+                <div className="comment__delete">
+                    <Button onClick={whenDeleteButtonClicked}>DELETE COMMENT</Button>
+                </div>
             </div>
         </div>
     );

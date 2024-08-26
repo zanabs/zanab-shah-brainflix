@@ -2,11 +2,11 @@ import { Avatar } from '../Avatar/Avatar';
 import { Button } from '../Button/Button';
 import axios from 'axios';
 import './AddComment.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { API_KEY, API_URL } from '../../utils';
 
-export const AddComment = ({userImageSrc, videoId, newCommentAdded}) => {
+export const AddComment = ({userImageSrc, videoId, updateCommentsList}) => {
 
     const [newComment, setNewComment] = useState('');
         
@@ -16,10 +16,10 @@ export const AddComment = ({userImageSrc, videoId, newCommentAdded}) => {
         try{
             await axios.post(`${API_URL}/videos/${videoId}/comments${API_KEY}`, {
                 comment: newComment,
-                name: 'Zanab'
+                name: 'unknown user'
             }); 
 
-            newCommentAdded();
+            updateCommentsList();
             setNewComment('');
         }catch(error) {
             console.error('Sorry, we could not post your comment at this time:', error);

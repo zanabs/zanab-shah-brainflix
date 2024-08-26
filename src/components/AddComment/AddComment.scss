@@ -27,6 +27,8 @@
             height: 40px;
             padding: 1px;
         }
+
+        @include prevent-resize;
     }
 
     .avatar {

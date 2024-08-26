@@ -28,6 +28,7 @@
     &__title-input {
         @include input-field(false);
         padding: 1rem;
+        @include prevent-resize;
     
     }
     &__title-input::placeholder {
@@ -37,6 +38,7 @@
     &__description-input {
         @include input-field(true);
         margin-bottom: 2rem;
+        @include prevent-resize;
     }
 
     &__description-input::placeholder {

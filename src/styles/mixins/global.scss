@@ -30,6 +30,10 @@
 
 @mixin placeholder {
     color:$primaryBlack;
+    font-family: inherit;
+}
+
+@mixin prevent-resize {
     resize: none;
 }
 

@@ -1,12 +1,17 @@
-@use '../../styles/partials/_variables' as *;
+@use '../../styles/partials/__variables.scss' as *;
 @use '../../styles/mixins/global.scss' as *;
 
 .upload-video {
 
     &__title {
-        margin: 0%;
         padding: $componentSpacing 0rem;
-        font-size: 1.875rem;
+
+        @include for-tablet {
+            border-bottom: 1px solid $primarySilver;
+        }
+        h1 {
+            margin: 0%;
+        }
     }
     &__label {
         font-size: 15px;
@@ -15,6 +20,10 @@
     }
     &__preview {
         width: 100%;
+
+        @include for-desktop {
+            width: 33%;
+        }
     }
     &__title-input {
         @include input-field(false);
@@ -22,7 +31,7 @@
     
     }
     &__title-input::placeholder {
-        color:$primaryBlack;
+        @include placeholder;
     }
 
     &__description-input {
@@ -31,10 +40,17 @@
     }
 
     &__description-input::placeholder {
-        color:$primaryBlack;
+       @include placeholder;
     }
-    &__preview {
+
+    &__preview-form-fields {
         width: 100%;
+        box-sizing: border-box;
+
+        @include for-desktop {
+            padding-left: $componentSpacing;
+            width: 66%;
+        }
     }
 
     &__cancel {
@@ -42,9 +58,43 @@
         width: 100%;
         color: $primaryBlue;
         font-weight: 700;
-        padding-top: $componentSpacing;
     }
 
+    // &__form-fields {
+    //     @include for-desktop {
+    //         padding: ;
+    //     }
+    // }
 
+    &__form-buttons-section {
+        width: 100%;
 
+        @include for-tablet {
+            display: flex;
+            justify-content: end;
+            border-top: 1px solid $primarySilver;
+            padding-top: $componentSpacing;
+            margin-top: $componentSpacing;
+        }
+    }
+
+    &__form-buttons {
+        @include for-tablet {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: $componentSpacing;
+            align-items: center;
+        }
+    }
+
+    &__form {
+        @include for-tablet {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__submit-validation {
+        text-align: center;
+    }
 }

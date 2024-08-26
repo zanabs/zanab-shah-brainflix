@@ -20,9 +20,10 @@ export const Navigation = () => {
                 </div>
                 <Button prefixSrc={'/src/assets/images/icons/upload.svg'}>Upload</Button>
                 <div className='navigation__avatar navigation__avatar--tablet'>
-                    <Avatar userImageSrc={'src/assets/images/Mohan-muruge.jpg'} />
+                    <Avatar userImageSrc={'../../src/assets/images/Mohan-muruge.jpg'} />
                 </div>
             </div>
+        
         </section>
     );
 }

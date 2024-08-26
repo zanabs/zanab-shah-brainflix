@@ -9,7 +9,7 @@ export const Comments = ({comments}) => {
     return (
         <div className="comments">
             <h2>{comments.length} Comments</h2>
-            <AddComment userImageSrc={'src/assets/images/Mohan-muruge.jpg'} />
+            <AddComment userImageSrc={'../../src/assets/images/Mohan-muruge.jpg'} />
             <hr />
             {comments.length && comments.map((comment, index) => (
                 <div key={index}>

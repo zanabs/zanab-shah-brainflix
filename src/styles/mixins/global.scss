@@ -28,6 +28,11 @@
     @media (min-width: 1280px) { @content; }
 }
 
+@mixin placeholder {
+    color:$primaryBlack;
+    resize: none;
+}
+
 @font-face {
     font-family: AvenirNext;
     src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
@@ -48,3 +53,4 @@
     src: url(../../assets/fonts/AvenirNextLTProBold.ttf) format("truetype");
     font-weight: 700;
 }
+

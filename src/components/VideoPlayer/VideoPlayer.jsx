@@ -25,28 +25,28 @@ export const VideoPlayer = () => {
                     alert("no videos to display");
                 }
             } catch (error) {
-                console.error('Error fetching videos:', error);
+                console.error('we are not able to retrieve the requested videos:', error);
             }
         };
 
         getVideos();
     }, [])
 
-    useEffect(() => {
-        const getCurrentVideo = async () => {
-            console.log('useEffect getCurrentVideo')
-            if (videoId) {                
-                try {
-                    const response = await axios.get(`${API_URL}/videos/${videoId}${API_KEY}`);
-                    setCurrentVideo(response.data);
-                } catch (error) {
-                    console.error(`ERROR. Cannot retrieve video from this id:${videoId}`, error);
-                }
-            } else if(videos.length) {
-                navigatePage('/video/'+videos[0].id);
+    const getCurrentVideo = async () => {
+        console.log('useEffect getCurrentVideo')
+        if (videoId) {                
+            try {
+                const response = await axios.get(`${API_URL}/videos/${videoId}${API_KEY}`);
+                setCurrentVideo(response.data);
+            } catch (error) {
+                console.error(`ERROR. Cannot retrieve video from this id:${videoId}`, error);
             }
+        } else if(videos.length) {
+            navigatePage('/video/'+videos[0].id);
         }
+    }
 
+    useEffect(() => {
         getCurrentVideo();
         
     }, [videos, videoId]);
@@ -95,7 +95,9 @@ export const VideoPlayer = () => {
                     <hr />
                     <p>{currentVideo.description}</p>
                     <div className='video-player__comments-next-videos'>
-                        {currentVideo.comments && <Comments comments={currentVideo.comments} />}
+                        {currentVideo.comments && (
+                            <Comments comments={currentVideo.comments} videoId={currentVideo.id} newCommentAdded={() => getCurrentVideo()} />
+                        )}
                         <NextVideos videos={videos} currentVideo={currentVideo} onVideoChange={clickThumbnail} />
                     </div>
                 </div>

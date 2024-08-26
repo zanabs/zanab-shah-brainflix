@@ -1,12 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import { Avatar } from '../Avatar/Avatar';
 import { Button } from '../Button/Button';
 import './Navigation.scss'
 
 export const Navigation = () => {
+
+    
+        const navigateHome = useNavigate(); 
+
+        
     return (
         <section className='navigation'>
             <div className='navigation__logo'>
-                <img src='/src/assets/images/BrainFlix-logo.svg' alt='logo'/>
+                <img onClick={() => navigateHome('/')} src='/src/assets/images/BrainFlix-logo.svg' alt='logo'/>
             </div>
             <div className='navigation__search-bar-button'>
                 <div className='navigation__search-bar'>

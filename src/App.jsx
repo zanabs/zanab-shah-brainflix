@@ -16,19 +16,19 @@ function App() {
 
   return (
     <>
-    <Navigation />
-      <div id="app__border">
-        <hr></hr>
-      </div>
-      <div id="app__body">
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<VideoPlayer /> }/>
-            <Route path="/upload" element={<Upload />}/>
-            <Route path="/video/:videoId" element={<VideoPlayer />}/>
-          </Routes>
+          <Navigation />
+            <div id="app__border">
+              <hr></hr>
+            </div>
+            <div id="app__body">
+            <Routes>
+              <Route path="/" element={<VideoPlayer /> }/>
+              <Route path="/upload" element={<Upload />}/>
+              <Route path="/video/:videoId" element={<VideoPlayer />}/>
+            </Routes>
+          </div>
         </BrowserRouter>
-      </div>
     </>
   )
 }

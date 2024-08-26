@@ -13,9 +13,9 @@ export const Upload = () => {
             setPublishButtonClicked(true);
         
 
-        setTimeout(() => {
-            navigateHome('/'); 
-        }, 2000);
+            setTimeout(() => {
+                navigateHome('/'); 
+            }, 2000);
         
     }
         return (

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './UploadVideo.scss'
-import { Button } from '../Button/Button';
+import { Button } from '../../components/Button/Button';
 
 
 export const UploadVideo = () => {

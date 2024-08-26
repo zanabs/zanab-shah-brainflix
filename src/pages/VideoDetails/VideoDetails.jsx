@@ -1,14 +1,15 @@
-import { Comments } from '../Comments/Comments';
-import { Icon } from '../Icon/Icon';
-import { NextVideos } from '../NextVideos/NextVideos';
-import './VideoPlayer.scss';
+
+import './VideoDetails.scss';
 import { useEffect, useState } from 'react';
 import { API_KEY, API_URL } from '../../utils';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Comments } from '../../components/Comments/Comments';
+import { Icon } from '../../components/Icon/Icon';
+import { NextVideos } from '../../components/NextVideos/NextVideos';
 
 
-export const VideoPlayer = () => {
+export const VideoDetails = () => {
 
     const [videos, setVideos] = useState([]);
     const [currentVideo, setCurrentVideo] = useState(null);
@@ -33,7 +34,6 @@ export const VideoPlayer = () => {
     }, [])
 
     const getCurrentVideo = async () => {
-        console.log('useEffect getCurrentVideo')
         if (videoId) {                
             try {
                 const response = await axios.get(`${API_URL}/videos/${videoId}${API_KEY}`);

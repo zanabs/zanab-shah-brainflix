@@ -1,7 +1,7 @@
 
 import './VideoDetails.scss';
 import { useEffect, useState } from 'react';
-import { API_KEY, API_URL } from '../../utils';
+import { API_URL } from '../../utils';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Comments } from '../../components/Comments/Comments';
@@ -19,7 +19,7 @@ export const VideoDetails = () => {
     useEffect(() => {
         const getVideos = async () => {
             try {
-                const response = await axios.get(`${API_URL}/videos${API_KEY}`);            
+                const response = await axios.get(`${API_URL}/videos`);            
                 if (response.data.length > 0) {
                     setVideos(response.data);
                 } else {
@@ -36,7 +36,7 @@ export const VideoDetails = () => {
     const getCurrentVideo = async () => {
         if (videoId) {                
             try {
-                const response = await axios.get(`${API_URL}/videos/${videoId}${API_KEY}`);
+                const response = await axios.get(`${API_URL}/videos/${videoId}`);
                 setCurrentVideo(response.data);
             } catch (error) {
                 console.error(`ERROR. Cannot retrieve video from this id:${videoId}`, error);

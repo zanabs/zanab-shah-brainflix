@@ -4,7 +4,7 @@ import axios from 'axios';
 import './AddComment.scss';
 import { useState } from 'react';
 
-import { API_KEY, API_URL } from '../../utils';
+import { API_URL } from '../../utils';
 
 export const AddComment = ({userImageSrc, videoId, updateCommentsList}) => {
 
@@ -14,7 +14,7 @@ export const AddComment = ({userImageSrc, videoId, updateCommentsList}) => {
         event.preventDefault();
 
         try{
-            await axios.post(`${API_URL}/videos/${videoId}/comments${API_KEY}`, {
+            await axios.post(`${API_URL}/videos/${videoId}/comments`, {
                 comment: newComment,
                 name: 'unknown user'
             }); 

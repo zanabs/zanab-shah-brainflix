@@ -2,7 +2,7 @@ import axios from "axios";
 import { Avatar } from "../Avatar/Avatar";
 
 import './Comment.scss';
-import { API_KEY, API_URL } from "../../utils";
+import { API_URL } from "../../utils";
 import { Button } from "../Button/Button";
 
 export const Comment = ({comment, updateCommentsList, videoId}) => {
@@ -12,7 +12,7 @@ export const Comment = ({comment, updateCommentsList, videoId}) => {
 
     const whenDeleteButtonClicked = async () => {
         try {
-            await axios.delete(`${API_URL}/videos/${videoId}/comments/${comment.id}${API_KEY}`);
+            await axios.delete(`${API_URL}/videos/${videoId}/comments/${comment.id}`);
             updateCommentsList();
             
         } catch(error) {

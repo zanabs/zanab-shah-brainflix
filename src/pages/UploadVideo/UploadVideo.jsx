@@ -1,21 +1,43 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './UploadVideo.scss'
 import { Button } from '../../components/Button/Button';
+import axios from 'axios';
+import { API_URL } from '../../utils';
 
 
 export const UploadVideo = () => {
         const [publishButtonClicked, setPublishButtonClicked] = useState(false);
+        const [title, setTitle]=useState('');
+        const [description, setDescription]=useState('');
         const navigateHome = useNavigate(); 
+
+        useEffect(()=> {
+            const postVideo = async () => {
+
+                try {
+                    if (publishButtonClicked){
+                        
+                        await axios.post(`${API_URL}/videos/`, {
+                            title: title,
+                            description: description,
+                        })
+
+                        setTimeout(() => {
+                            navigateHome('/'); 
+                        }, 2000);
+                    }
+                } catch(error){
+                    alert("there's been an error",error)
+                }
+            }
+            postVideo();
+        }, [publishButtonClicked]) 
+        
 
         const whenSubmitted = (event) => {
             event.preventDefault();
             setPublishButtonClicked(true);
-        
-
-            setTimeout(() => {
-                navigateHome('/'); 
-            }, 2000);
         
     }
         return (
@@ -37,11 +59,11 @@ export const UploadVideo = () => {
                                 <div className='upload-video__form-fields'>
                                     <p className="upload-video__label">TITLE YOUR VIDEO
                                     </p>
-                                    <textarea required placeholder='Add a title to your video' className='upload-video__title-input'>
+                                    <textarea value={title} onChange={(e)=> {setTitle(e.target.value)}} required placeholder='Add a title to your video' className='upload-video__title-input'>
                                     </textarea>
                                     <p className="upload-video__label">ADD A DESCRIPTION
                                     </p>
-                                    <textarea required placeholder='Add a description for your video' className='upload-video__description-input'>
+                                    <textarea value={description} onChange={(e)=>{setDescription(e.target.value)}} required placeholder='Add a description for your video' className='upload-video__description-input'>
                                     </textarea>
                                 </div>
                             </div>

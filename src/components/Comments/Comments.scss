@@ -3,8 +3,9 @@
 
 .comments {
     margin-bottom: $componentSpacing;
-
+    width: 100%;
     @include for-desktop {
         border-right: 1px solid $secondarySilver;
+       
     }
 }

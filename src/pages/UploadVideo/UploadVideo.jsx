@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import './UploadVideo.scss'
 import { Button } from '../../components/Button/Button';
 import axios from 'axios';
-import { API_URL } from '../../utils';
+import { API_URL } from '../../utils/utils';
 
 
 export const UploadVideo = () => {
@@ -77,7 +77,7 @@ export const UploadVideo = () => {
                                         
                                         <Button type="submit" prefixSrc={'src/assets/images/icons/upload.svg'}>PUBLISH</Button>  
                                     </div>
-                                    <p className="upload-video__cancel">CANCEL</p>
+                                    <button onClick={() => navigateHome('/')} className="upload-video__cancel">CANCEL</button>
                                 </div>
                             </div>
                             <div className='upload-video__submit-validation'>

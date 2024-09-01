@@ -4,7 +4,7 @@ import axios from 'axios';
 import './AddComment.scss';
 import { useState } from 'react';
 
-import { API_URL } from '../../utils';
+import { API_URL } from '../../utils/utils';
 
 export const AddComment = ({userImageSrc, videoId, updateCommentsList}) => {
 

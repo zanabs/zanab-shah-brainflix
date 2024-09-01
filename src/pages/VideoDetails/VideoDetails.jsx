@@ -1,7 +1,7 @@
 
 import './VideoDetails.scss';
 import { useEffect, useState } from 'react';
-import { API_URL } from '../../utils';
+import { API_URL } from '../../utils/utils';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Comments } from '../../components/Comments/Comments';
@@ -13,8 +13,10 @@ export const VideoDetails = () => {
 
     const [videos, setVideos] = useState([]);
     const [currentVideo, setCurrentVideo] = useState(null);
+    const [deleteCommentClicked, setDeleteCommentClicked] = useState(false);
     const { videoId } = useParams();
     const navigatePage = useNavigate();
+    
 
     useEffect(() => {
         const getVideos = async () => {
@@ -36,23 +38,25 @@ export const VideoDetails = () => {
 
     }, [])
 
-    const getCurrentVideo = async () => {
-        if (videoId) {                
-            try {
-                const response = await axios.get(`${API_URL}/videos/${videoId}`);
-                setCurrentVideo(response.data);
-            } catch (error) {
-                console.error(`ERROR. Cannot retrieve video from this id:${videoId}`, error);
-            }
-        } else if(videos.length) {
-            navigatePage('/video/'+videos[0].id);
-        }
-    }
+  
 
     useEffect(() => {
+
+        const getCurrentVideo = async () => {
+            if (videoId) {                
+                try {
+                    const response = await axios.get(`${API_URL}/videos/${videoId}`);
+                    setCurrentVideo(response.data);
+                } catch (error) {
+                    console.error(`ERROR. Cannot retrieve video from this id:${videoId}`, error);
+                }
+            } else if(videos.length) {
+                navigatePage('/video/'+videos[0].id);
+            }
+        }
         getCurrentVideo();
         
-    }, [videos, videoId]);
+    }, [videos, videoId, deleteCommentClicked]);
 
     const clickThumbnail = (video) => {
         navigatePage(`/video/${video.id}`);
@@ -99,7 +103,7 @@ export const VideoDetails = () => {
                     <p>{currentVideo.description}</p>
                     <div className='video-player__comments-next-videos'>
                         {currentVideo.comments && (
-                            <Comments comments={currentVideo.comments} videoId={currentVideo.id} updateCommentsList={() => getCurrentVideo()} />
+                            <Comments comments={currentVideo.comments} videoId={currentVideo.id} updateCommentsList={() => setDeleteCommentClicked(!deleteCommentClicked)} />
                         )}
                         <NextVideos videos={videos} currentVideo={currentVideo} onVideoChange={clickThumbnail} />
                     </div>

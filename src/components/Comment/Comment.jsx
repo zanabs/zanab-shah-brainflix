@@ -2,7 +2,7 @@ import axios from "axios";
 import { Avatar } from "../Avatar/Avatar";
 
 import './Comment.scss';
-import { API_URL } from "../../utils";
+import { API_URL } from "../../utils/utils";
 import { Button } from "../Button/Button";
 
 export const Comment = ({comment, updateCommentsList, videoId}) => {

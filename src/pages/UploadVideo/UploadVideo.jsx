@@ -12,6 +12,10 @@ export const UploadVideo = () => {
         const [description, setDescription]=useState('');
         const navigateHome = useNavigate(); 
 
+        useEffect(() => {
+            document.title = 'Brainflix - Upload Video';
+          }, []);
+
         useEffect(()=> {
             const postVideo = async () => {
 

@@ -30,7 +30,10 @@ export const VideoDetails = () => {
             }
         };
 
+        document.title = 'Brainflix - Video Player';
+
         getVideos();
+
     }, [])
 
     const getCurrentVideo = async () => {

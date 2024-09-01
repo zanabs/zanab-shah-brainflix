@@ -16,7 +16,7 @@ export const AddComment = ({userImageSrc, videoId, updateCommentsList}) => {
         try{
             await axios.post(`${API_URL}/videos/${videoId}/comments`, {
                 comment: newComment,
-                name: 'unknown user'
+            
             }); 
 
             updateCommentsList();

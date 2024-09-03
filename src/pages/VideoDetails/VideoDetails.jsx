@@ -46,6 +46,9 @@ export const VideoDetails = () => {
             if (videoId) {                
                 try {
                     const response = await axios.get(`${API_URL}/videos/${videoId}`);
+                    const video = response.data;
+                    video.comments.sort((a, b) => b.timestamp - a.timestamp);
+
                     setCurrentVideo(response.data);
                 } catch (error) {
                     console.error(`ERROR. Cannot retrieve video from this id:${videoId}`, error);

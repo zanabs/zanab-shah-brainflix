@@ -4,7 +4,6 @@ import './Comments.scss';
 
 
 export const Comments = ({comments, videoId, updateCommentsList}) => {
-    
     return (
         <div className="comments">
             <h2>{comments.length} Comments</h2>
